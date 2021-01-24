@@ -1,30 +1,14 @@
 extends Node
 
-
 var followingScene = ""
 var current_scene = null
 
-
 onready var player = $"/root/global/AnimationPlayer"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_cancel"):
@@ -38,13 +22,10 @@ func quitGame():
 	# saveGame()
 	get_tree().quit()
 
-
 func goto_scene(path):
 	global.followingScene = path
 	player.playback_speed = 2
 	player.play_backwards()
-	# call_deferred("_deferred_goto_scene", path)
-
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene

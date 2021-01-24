@@ -20,6 +20,7 @@ margin_left = 404.0
 margin_top = 394.0
 margin_right = 643.0
 margin_bottom = 466.0
+text = "start!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
